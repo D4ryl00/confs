@@ -6,16 +6,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'pbondoer/vim-42header'
 Plugin 'brookhong/cscope.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'shougo/deoplete.nvim'
+Plugin 'valloric/youcompleteme'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
 " ----- Remapping -----
 
