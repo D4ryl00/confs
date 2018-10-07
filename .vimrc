@@ -49,6 +49,7 @@ set list
 syntax on
 set nu
 set relativenumber
+set ruler
 set nocompatible              " be iMproved, required
 set backspace=indent,eol,start
 set shiftwidth=4
