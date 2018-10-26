@@ -35,6 +35,10 @@ nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+
 " ----- RECHERCHE -----
 
 set ignorecase		" Ignore la casse lors d'une recherche
