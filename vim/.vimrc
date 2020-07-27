@@ -48,3 +48,5 @@ set wildmenu		" Show autocompletion possibles
 "set background=dark	" Utilise des couleurs adaptees pour fond noir
 set showcmd			" Affiche les commandes incompletes
 set cc=80			" Change la couleur de fond a 80 colonnes
+
+let g:airline_powerline_fonts = 1 "populate the g:airline_symbols dictionary with the proper font glyphs for various symbols.
