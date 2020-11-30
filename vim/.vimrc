@@ -13,6 +13,12 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 
+" javascript
+" Fix files with prettier, and then ESLint.
+let g:ale_fixers = ['prettier', 'eslint']
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+
 " NERDTree plugin specific commands
 :nnoremap <C-g> :NERDTreeToggle<CR>
 
@@ -48,5 +54,4 @@ set wildmenu		" Show autocompletion possibles
 "set background=dark	" Utilise des couleurs adaptees pour fond noir
 set showcmd			" Affiche les commandes incompletes
 set cc=80			" Change la couleur de fond a 80 colonnes
-
-let g:airline_powerline_fonts = 1 "populate the g:airline_symbols dictionary with the proper font glyphs for various symbols.
+let g:airline_powerline_fonts = 1
