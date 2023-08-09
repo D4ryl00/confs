@@ -1,5 +1,6 @@
 "colorscheme desert
 syntax on
+set mouse=
 set nu
 set shiftwidth=4
 set tabstop=4
@@ -21,15 +22,21 @@ set undofile
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'github/copilot.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'AndrewRadev/diffurcate.vim'
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 
 " #### NerdTree shortcut #####
-nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <leader>n :NERDTreeFocus<CR>
 
 " #### coc.nvim #####
 
@@ -77,8 +84,8 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   " Fix on save
-  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-  autocmd BufWritePost *.go :silent call CocActionAsync('format')
+ " autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+ " autocmd BufWritePost *.go :silent call CocActionAsync('format')
 augroup end
 
 " Apply AutoFix to problem on the current line.
@@ -91,3 +98,13 @@ command! -nargs=0 Format :call CocActionAsync('format')
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" colorscheme
+lua require('tokyonight-init')
+colorscheme tokyonight-night
