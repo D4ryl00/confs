@@ -32,6 +32,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 Plug 'AndrewRadev/diffurcate.vim'
 Plug 'folke/tokyonight.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 call plug#end()
 
@@ -74,8 +77,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>g  <Plug>(coc-format-selected)
+nmap <leader>g  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -84,8 +87,9 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   " Fix on save
- " autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
- " autocmd BufWritePost *.go :silent call CocActionAsync('format')
+ autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+ autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.formatDocument')
+" autocmd BufWritePost *.go :silent call CocActionAsync('format')
 augroup end
 
 " Apply AutoFix to problem on the current line.
@@ -108,3 +112,10 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " colorscheme
 lua require('tokyonight-init')
 colorscheme tokyonight-night
+
+
+nnoremap <leader>tt <cmd>NvimTreeToggle<cr>
+nnoremap <leader>tc <cmd>NvimTreeCollapse<cr>
+nnoremap <leader>tf <cmd>NvimTreeFindFile<cr>
+lua require('nvim-tree-init')
+lua require('telescope-init')
