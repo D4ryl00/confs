@@ -17,7 +17,7 @@ local sources = {
   b.formatting.clang_format,
 
   b.diagnostics.buf,
-  b.diagnostics.tsc,
+  -- b.diagnostics.tsc,
   b.diagnostics.editorconfig_checker,
 
   b.formatting.gofmt,
@@ -37,7 +37,7 @@ null_ls.setup {
           -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
           -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
           --[[ vim.lsp.buf.formatting_sync() ]]
-          vim.lsp.buf.format({ bufnr = bufnr })
+          vim.lsp.buf.format { bufnr = bufnr }
         end,
       })
     end

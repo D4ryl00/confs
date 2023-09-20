@@ -35,6 +35,7 @@ local plugins = {
 
   {
     "nvim-tree/nvim-tree.lua",
+    lazy = false,
     opts = overrides.nvimtree,
   },
 
@@ -76,6 +77,11 @@ local plugins = {
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
     end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    lazy = false,
   },
 
   -- To make a plugin not be loaded
