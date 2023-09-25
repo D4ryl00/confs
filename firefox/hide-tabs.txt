@@ -1,0 +1,16 @@
+about:config
+toolkit.legacyUserProfileCustomizations.stylesheets=true.
+Open the Profile directory, check where it is in Menu — help — Troubleshooting Information.
+Create the chrome folder there.
+Create the userChrome.css file.
+
+Add:
+```
+#TabsToolbar {
+  visibility: collapse;
+}
+
+#sidebar-header {
+  visibility: collapse !important;
+}
+```
