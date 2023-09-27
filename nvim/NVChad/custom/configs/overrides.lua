@@ -14,6 +14,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "go",
+    "yaml",
   },
   indent = {
     enable = true,
@@ -32,6 +33,8 @@ M.mason = {
     -- web dev stuff
     "css-lsp",
     "html-lsp",
+    "yaml-language-server",
+    "json-lsp",
     "typescript-language-server",
     "deno",
     "prettier",
