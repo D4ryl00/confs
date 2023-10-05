@@ -35,7 +35,7 @@ M.mason = {
     "html-lsp",
     "yaml-language-server",
     "json-lsp",
-    "typescript-language-server",
+    "eslint-lsp",
     "deno",
     "prettier",
 
