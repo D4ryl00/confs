@@ -35,13 +35,12 @@ M.mason = {
     "html-lsp",
     "yaml-language-server",
     "json-lsp",
+    "typescript-language-server",
     "eslint-lsp",
     "deno",
     "prettier",
 
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
+    "buf-language-server",
 
     -- golang
     "gopls",
